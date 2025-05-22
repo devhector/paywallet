@@ -33,15 +33,20 @@ public class WalletTest {
   }
 
   @Test
+  void whenAmountIsPositiveAndDeductFundsShouldSubtractAmountInBalance() {
+    Wallet wallet = new Wallet(BALANCE);
+    BigDecimal amount = new BigDecimal(10);
+
+    wallet.deductFunds(amount);
+
+    assertEquals(new BigDecimal(90), wallet.balance());
+  }
+
+  @Test
   void whenDeductFundsAndAmountIsGreaterThanBalanceShouldThrowsInsufficientBalanceException() {
     Wallet wallet = new Wallet(BALANCE);
     BigDecimal amount = new BigDecimal(110);
 
     assertThrows(InsufficientBalanceException.class, () -> wallet.deductFunds(amount));
-  }
-
-  @Test
-  void whenDeductFundsThenSubtractBalance() {
-
   }
 }
