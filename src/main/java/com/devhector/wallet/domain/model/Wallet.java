@@ -1,9 +1,9 @@
-package com.devhector.wallet.model;
+package com.devhector.wallet.domain.model;
 
 import java.math.BigDecimal;
 
-import com.devhector.wallet.model.exceptions.InsufficientBalanceException;
-import com.devhector.wallet.model.exceptions.NegativeAmountException;
+import com.devhector.wallet.domain.model.exceptions.InsufficientBalanceException;
+import com.devhector.wallet.domain.model.exceptions.NegativeAmountException;
 
 public class Wallet {
 

@@ -1,4 +1,4 @@
-package com.devhector.wallet.model;
+package com.devhector.wallet.domain.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,8 +7,8 @@ import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
 
-import com.devhector.wallet.model.exceptions.InsufficientBalanceException;
-import com.devhector.wallet.model.exceptions.NegativeAmountException;
+import com.devhector.wallet.domain.model.exceptions.InsufficientBalanceException;
+import com.devhector.wallet.domain.model.exceptions.NegativeAmountException;
 
 public class WalletTest {
   private static final BigDecimal BALANCE = new BigDecimal(100);
