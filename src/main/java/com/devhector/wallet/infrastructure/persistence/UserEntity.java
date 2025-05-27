@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
+@Entity
 public class UserEntity {
   @Id
   @Column(name = "cpf_cnpj", nullable = false, unique = true)
@@ -33,6 +34,15 @@ public class UserEntity {
   @Enumerated(EnumType.STRING)
   @Column(name = "user_type")
   private UserType type;
+
+  public UserEntity(String cpfCnpj, String email, String name, String password, WalletEntity wallet, UserType type) {
+    this.cpfCnpj = cpfCnpj;
+    this.email = email;
+    this.name = name;
+    this.password = password;
+    this.wallet = wallet;
+    this.type = type;
+  }
 
   public String getCpfCnpj() {
     return cpfCnpj;

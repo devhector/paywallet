@@ -3,10 +3,12 @@ package com.devhector.wallet.infrastructure.persistence;
 import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+@Entity
 public class WalletEntity {
 
   @Id
@@ -15,6 +17,10 @@ public class WalletEntity {
 
   @Column(name = "balance")
   private BigDecimal balance;
+
+  public WalletEntity(BigDecimal balance) {
+    this.balance = balance;
+  }
 
   public Long getId() {
     return id;
