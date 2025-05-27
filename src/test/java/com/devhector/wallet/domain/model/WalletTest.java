@@ -15,7 +15,7 @@ public class WalletTest {
 
   @Test
   void whenAmountIsNegativeShouldThrowNegativeAmountException() {
-    Wallet wallet = new Wallet(BALANCE);
+    Wallet wallet = new Wallet(1L, BALANCE);
     BigDecimal amount = new BigDecimal(-10);
 
     assertThrows(NegativeAmountException.class, () -> wallet.addFunds(amount));
@@ -24,7 +24,7 @@ public class WalletTest {
 
   @Test
   void whenAmountIsPositiveAndAddFundsShouldAddAmountInBalance() {
-    Wallet wallet = new Wallet(BALANCE);
+    Wallet wallet = new Wallet(1L, BALANCE);
     BigDecimal amount = new BigDecimal(10);
 
     wallet.addFunds(amount);
@@ -34,7 +34,7 @@ public class WalletTest {
 
   @Test
   void whenAmountIsPositiveAndDeductFundsShouldSubtractAmountInBalance() {
-    Wallet wallet = new Wallet(BALANCE);
+    Wallet wallet = new Wallet(1L, BALANCE);
     BigDecimal amount = new BigDecimal(10);
 
     wallet.deductFunds(amount);
@@ -44,7 +44,7 @@ public class WalletTest {
 
   @Test
   void whenDeductFundsAndAmountIsGreaterThanBalanceShouldThrowsInsufficientBalanceException() {
-    Wallet wallet = new Wallet(BALANCE);
+    Wallet wallet = new Wallet(1L, BALANCE);
     BigDecimal amount = new BigDecimal(110);
 
     assertThrows(InsufficientBalanceException.class, () -> wallet.deductFunds(amount));

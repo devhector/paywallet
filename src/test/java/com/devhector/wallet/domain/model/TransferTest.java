@@ -43,8 +43,8 @@ public class TransferTest {
     this.payer = Mockito.mock(User.class);
     this.payee = Mockito.mock(User.class);
 
-    this.payerWallet = new Wallet(BALANCE_PAYER);
-    this.payeeWallet = new Wallet(BALANCE_PAYEE);
+    this.payerWallet = new Wallet(1L, BALANCE_PAYER);
+    this.payeeWallet = new Wallet(2L, BALANCE_PAYEE);
 
     Mockito.when(payer.wallet()).thenReturn(payerWallet);
     Mockito.when(payee.wallet()).thenReturn(payeeWallet);

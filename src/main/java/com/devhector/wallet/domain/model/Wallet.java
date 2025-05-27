@@ -7,9 +7,15 @@ import com.devhector.wallet.domain.model.exceptions.NegativeAmountException;
 
 public class Wallet {
 
+  private Long id;
   private BigDecimal balance;
 
   public Wallet(BigDecimal balance) {
+    this.balance = balance;
+  }
+
+  public Wallet(Long id, BigDecimal balance) {
+    this.id = id;
     this.balance = balance;
   }
 
@@ -24,6 +30,10 @@ public class Wallet {
       throw new InsufficientBalanceException("Amount greater than balance");
     }
     this.balance = balance.subtract(amount);
+  }
+
+  public Long id() {
+    return this.id;
   }
 
   public BigDecimal balance() {

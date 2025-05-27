@@ -6,10 +6,10 @@ import com.devhector.wallet.infrastructure.persistence.WalletEntity;
 public class WalletPersistenceMapper implements WalletMapper {
 
   public Wallet toDomain(WalletEntity entity) {
-    return new Wallet(entity.getBalance());
+    return new Wallet(entity.getId(), entity.getBalance());
   }
 
   public WalletEntity toEntity(Wallet domain) {
-    return new WalletEntity(domain.balance());
+    return new WalletEntity(domain.id(), domain.balance());
   }
 }
