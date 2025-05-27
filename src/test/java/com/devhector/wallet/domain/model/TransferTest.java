@@ -25,9 +25,7 @@ public class TransferTest {
   void whenUserIsRegularAndTransferOccurShouldSubtractAmountFromPayerAndAddToPayee() {
     Mockito.when(payer.type()).thenReturn(UserType.REGULAR);
 
-    Transfer transfer = new Transfer();
-
-    transfer.execute(payer, payee, AMOUNT);
+    Transfer.execute(payer, payee, AMOUNT);
 
     assertEquals(new BigDecimal(10), payerWallet.balance());
     assertEquals(new BigDecimal(20), payeeWallet.balance());
@@ -37,9 +35,7 @@ public class TransferTest {
   void whenUserIsShopkeeperAndPayerShouldThrowsExceptionTranferNotAllowed() {
     Mockito.when(payer.type()).thenReturn(UserType.SHOPKEEPER);
 
-    Transfer transfer = new Transfer();
-
-    assertThrows(TransferNotAllowedForUserTypeException.class, () -> transfer.execute(payer, payee, AMOUNT));
+    assertThrows(TransferNotAllowedForUserTypeException.class, () -> Transfer.execute(payer, payee, AMOUNT));
   }
 
   @BeforeEach

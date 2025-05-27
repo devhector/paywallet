@@ -8,7 +8,7 @@ import com.devhector.wallet.domain.model.exceptions.TransferNotAllowedForUserTyp
 
 public class Transfer {
 
-  public Transaction execute(User payer, User payee, BigDecimal amount) {
+  public static Transaction execute(User payer, User payee, BigDecimal amount) {
     Wallet payerWallet = payer.wallet();
     Wallet payeeWallet = payee.wallet();
 
