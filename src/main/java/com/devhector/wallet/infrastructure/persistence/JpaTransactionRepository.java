@@ -1,9 +1,10 @@
 package com.devhector.wallet.infrastructure.persistence;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Repository;
 
 import com.devhector.wallet.domain.model.Transaction;
-import com.devhector.wallet.domain.model.exceptions.TransactionNotFoundException;
 import com.devhector.wallet.domain.repository.TransactionRepository;
 import com.devhector.wallet.infrastructure.mapper.TransactionMapper;
 
@@ -17,10 +18,9 @@ public class JpaTransactionRepository implements TransactionRepository {
     this.mapper = mapper;
   }
 
-  public Transaction findById(String id) {
+  public Optional<Transaction> findById(String id) {
     return repository.findById(id)
-        .map(mapper::toDomain)
-        .orElseThrow(() -> new TransactionNotFoundException("transaction not found: " + id));
+        .map(mapper::toDomain);
   }
 
   public void save(Transaction transaction) {
