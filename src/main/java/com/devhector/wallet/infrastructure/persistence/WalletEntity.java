@@ -18,6 +18,9 @@ public class WalletEntity {
   @Column(name = "balance")
   private BigDecimal balance;
 
+  public WalletEntity() {
+  }
+
   public WalletEntity(Long id, BigDecimal balance) {
     this.id = id;
     this.balance = balance;

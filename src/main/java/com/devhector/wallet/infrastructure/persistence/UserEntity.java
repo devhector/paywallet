@@ -35,6 +35,9 @@ public class UserEntity {
   @Column(name = "user_type")
   private UserType type;
 
+  public UserEntity() {
+  }
+
   public UserEntity(String cpfCnpj, String email, String name, String password, WalletEntity wallet, UserType type) {
     this.cpfCnpj = cpfCnpj;
     this.email = email;
