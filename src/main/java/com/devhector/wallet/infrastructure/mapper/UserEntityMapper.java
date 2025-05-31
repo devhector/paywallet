@@ -1,9 +1,12 @@
-package com.devhector.wallet.infrastructure.persistence.mapper;
+package com.devhector.wallet.infrastructure.mapper;
+
+import org.springframework.stereotype.Component;
 
 import com.devhector.wallet.domain.model.User;
 import com.devhector.wallet.infrastructure.persistence.UserEntity;
 
-public class UserPersistenceMapper implements UserMapper {
+@Component
+public class UserEntityMapper implements UserMapper {
   public User toDomain(UserEntity entity, WalletMapper mapper) {
     return new User(
         entity.getCpfCnpj(),

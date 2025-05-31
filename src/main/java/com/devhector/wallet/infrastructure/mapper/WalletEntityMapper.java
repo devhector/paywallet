@@ -1,9 +1,12 @@
-package com.devhector.wallet.infrastructure.persistence.mapper;
+package com.devhector.wallet.infrastructure.mapper;
+
+import org.springframework.stereotype.Component;
 
 import com.devhector.wallet.domain.model.Wallet;
 import com.devhector.wallet.infrastructure.persistence.WalletEntity;
 
-public class WalletPersistenceMapper implements WalletMapper {
+@Component
+public class WalletEntityMapper implements WalletMapper {
 
   public Wallet toDomain(WalletEntity entity) {
     return new Wallet(entity.getId(), entity.getBalance());

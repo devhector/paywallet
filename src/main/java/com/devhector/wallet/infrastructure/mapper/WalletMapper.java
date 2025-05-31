@@ -1,4 +1,4 @@
-package com.devhector.wallet.infrastructure.persistence.mapper;
+package com.devhector.wallet.infrastructure.mapper;
 
 import com.devhector.wallet.domain.model.Wallet;
 import com.devhector.wallet.infrastructure.persistence.WalletEntity;

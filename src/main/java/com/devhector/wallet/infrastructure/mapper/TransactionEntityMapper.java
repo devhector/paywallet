@@ -1,9 +1,12 @@
-package com.devhector.wallet.infrastructure.persistence.mapper;
+package com.devhector.wallet.infrastructure.mapper;
+
+import org.springframework.stereotype.Component;
 
 import com.devhector.wallet.domain.model.Transaction;
 import com.devhector.wallet.infrastructure.persistence.TransactionEntity;
 
-public class TransactionPersistenceMapper implements TransactionMapper {
+@Component
+public class TransactionEntityMapper implements TransactionMapper {
 
   public Transaction toDomain(TransactionEntity entity) {
     return new Transaction(
