@@ -4,5 +4,5 @@ import com.devhector.wallet.domain.model.Wallet;
 
 public interface WalletRepository {
 
-  Wallet save(Wallet wallet);
+  void save(Wallet wallet);
 }

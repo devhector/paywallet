@@ -5,5 +5,5 @@ import com.devhector.wallet.domain.model.User;
 public interface UserRepository {
   User findByCpfCnpj(String cpfCnpj);
 
-  User save(User user);
+  void save(User user);
 }

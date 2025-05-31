@@ -5,8 +5,8 @@ import org.springframework.stereotype.Repository;
 import com.devhector.wallet.domain.model.User;
 import com.devhector.wallet.domain.model.exceptions.UserNotFoundException;
 import com.devhector.wallet.domain.repository.UserRepository;
-import com.devhector.wallet.infrastructure.persistence.mapper.UserMapper;
-import com.devhector.wallet.infrastructure.persistence.mapper.WalletMapper;
+import com.devhector.wallet.infrastructure.mapper.UserMapper;
+import com.devhector.wallet.infrastructure.mapper.WalletMapper;
 
 @Repository
 public class JpaUserRepository implements UserRepository {
@@ -28,9 +28,8 @@ public class JpaUserRepository implements UserRepository {
   }
 
   @Override
-  public User save(User user) {
+  public void save(User user) {
     UserEntity entity = userMapper.toEntity(user, walletMapper);
-    UserEntity savedEntity = repository.save(entity);
-    return userMapper.toDomain(savedEntity, walletMapper);
+    repository.save(entity);
   }
 }
