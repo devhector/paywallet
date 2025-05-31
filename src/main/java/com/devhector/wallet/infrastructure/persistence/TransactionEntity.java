@@ -19,8 +19,11 @@ public class TransactionEntity {
   private String payeeId;
   @Column(name = "amount", nullable = false)
   private BigDecimal amount;
-  @Column(name = "current_time", nullable = false, columnDefinition = "TIMESTAMP")
+  @Column(name = "transaction_time", nullable = false, columnDefinition = "TIMESTAMP")
   private Instant currentTime;
+
+  public TransactionEntity() {
+  }
 
   public TransactionEntity(String id, String payerId, String payeeId, BigDecimal amount, Instant currentTime) {
     this.id = id;
