@@ -13,7 +13,7 @@ import com.devhector.wallet.infrastructure.controller.dto.TransferRequestDto;
 import com.devhector.wallet.infrastructure.mapper.TransactionDtoMapper;
 
 @RestController
-@RequestMapping("/transfer")
+@RequestMapping("/api/v0/transfer")
 public class TransferController {
   private final TransferService service;
   private final TransactionDtoMapper mapper;
