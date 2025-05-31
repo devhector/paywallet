@@ -1,11 +1,8 @@
 package com.devhector.wallet.infrastructure.mapper;
 
-import org.springframework.stereotype.Component;
-
 import com.devhector.wallet.domain.model.Transaction;
 import com.devhector.wallet.infrastructure.persistence.TransactionEntity;
 
-@Component
 public class TransactionEntityMapper implements TransactionMapper {
 
   public Transaction toDomain(TransactionEntity entity) {
