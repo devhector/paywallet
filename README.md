@@ -69,8 +69,7 @@ A arquitetura está dividida em camadas.
 14 directories, 42 files
 ```
 
-Toda a regra de negócio se encontra em `domain/model`, as classes ali contidas são responsáveis pelo funcionamento central da aplicação. A ideia foi isolar o funcionamento de qualquer framework, então tudo que o negócio hipotético precisa
-é feito por essas classes. (As exceptions ficaram aqui dentro, mas poderiam ter ficado fora)
+Todos os objetos relacionados ao negócio se encontram em `domain/model`, as classes ali contidas são responsáveis pelo funcionamento central da aplicação. A ideia foi isolar o funcionamento de qualquer framework, então tudo que o negócio hipotético precisa é feito por essas classes. (As exceptions ficaram aqui dentro, mas poderiam ter ficado fora)
 
 Já no `domain/repository` contém as interfaces responsáveis pelo contrato de persistência de dados, usando o padrão também chamado de repository, dessa forma os objetos responsáveis pela regra de negócio podem ser persistidos independente
 do método de persistência, que nesse caso foi um banco SQL, e a perisistencia foi feita lá em `infrastructure/persistense`
